@@ -313,8 +313,17 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (x == 0 || x == 4 || x == 8 || x == 12 || x == 16) {
                     if (x == 0) {
-                        playerCard1.setVisibility(View.VISIBLE);
-                        getWindow().getDecorView().findViewById(android.R.id.content).invalidate();
+                      
+                      playerCard1.setVisibility(View.INVISIBLE);
+                      playerCard1.postDelayed(new Runnable() {
+                          @Override
+                          public void run() {
+                              playerCard1.setVisibility(View.VISIBLE);
+                          }
+                      }, 3000);
+                      
+                        // playerCard1.setVisibility(View.VISIBLE);
+                        // getWindow().getDecorView().findViewById(android.R.id.content).invalidate();
 
                         h[0][0][0] = r2;
                         h[0][0][1] = r1;
